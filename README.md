@@ -1,6 +1,6 @@
 # ASE Assignments
 </br>
-LAB Assignments of the Advanced Software Engineering course
+LAB Assignments of the Advanced Software Engineering course (Unipi Computer Science M.Sc)
 </br>
 <h1> Repository index </h1>
 <ul type="disc">
