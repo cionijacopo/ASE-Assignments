@@ -8,9 +8,12 @@ def concat():
     a = request.args.get('a', type=str)
     b = request.args.get('b', type=str)
     if a and b:
+        #La concatenazione in python viene fatta con +
         return make_response(jsonify(s=a+b), 200) # HTTP 200 OK
     else:
         return make_response('Invalid input\n', 400) # HTTP 400 BAD REQUEST
+
+#Upper e lower sono i metodi per le stringhe 
 
 @app.route('/upper')
 def upper():

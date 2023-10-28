@@ -9,7 +9,7 @@ ALLOWED_STR_OPS = ['lower', 'upper', 'concat', 'editdistance']
 
 app = Flask(__name__, instance_relative_config=True)
 
-
+#<op> cattura l'elemento che si trova dopo /math/ e la da come input alla funzione math
 @app.route('/math/<op>')
 def math(op):
     a = request.args.get('a', type=float)
@@ -17,6 +17,7 @@ def math(op):
     if op not in ALLOWED_MATH_OPS:
         return make_response('Invalid operation\n', 404)
     try:
+        #MATH_URL riprende gli url definiti nell'altro file .py 
         x = requests.get(MATH_URL + f'/{op}?a={a}&b={b}')
         x.raise_for_status()
         return x.json()
@@ -33,6 +34,7 @@ def string(op):
     if op not in ALLOWED_STR_OPS:
         return make_response('Invalid operation\n', 404)
     try:
+        #STRING_URL riprende gli url definiti nell'altro file .py 
         if op == 'lower' or op == 'upper':
             x = requests.get(STRING_URL + f'/{op}?a={a}')
         else:
