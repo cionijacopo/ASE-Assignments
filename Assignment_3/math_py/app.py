@@ -26,7 +26,7 @@ def sub():
         return make_response('Invalid input\n', 400)
     
 # Definisco la rotta
-@app.route('\mul')
+@app.route('/mul')
 #Definisco la funzione
 def mul():
     a = request.args.get('a', type=float)
@@ -37,7 +37,7 @@ def mul():
         return make_response('Invalid Input', 400)
 
 # Definisco la rotta
-@app.route('\div')
+@app.route('/div')
 #Definisco la funzione
 def div():
     a = request.args.get('a', type=float)
@@ -48,7 +48,7 @@ def div():
         return make_response('Invalid Input', 400)
 
 # Definisco la rotta
-@app.route('\mod')
+@app.route('/mod')
 #Definisco la funzione
 def mod():
     a = request.args.get('a', type=float)
